@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>TunPark</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/framework7.ios.min.css">
+        <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="Welcome-Screen/welcomescreen.css">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+    </head>
+    <body style="font-family:Arial;font-size:18pt;border:0;margin:0;padding:0;" class="theme-lightblue">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-right panel-cover">
+        <div class="content-block">
+            <p><i class="fa fa-info-circle" aria-hidden="true" ></i><!--<a class="close-panel" href="villes.html">-->  Qui sommes nous</p>
+            <p id="notre_siteweb"><a href="#"  class="fa fa-chrome" aria-hidden="true">  Notre siteweb</a></p>
+            <p ><a id="facook_page" href="#"  class="fa fa-facebook-square" aria-hidden="true">  Page Facebook</a></p>
+            <p><a class="close-panel open-popup fa fa-phone-square" href="#" aria-hidden="true">  Contact</a></p>
+        </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-left panel-cover">
+        <div class="content-block" id="PanelMenu">
+            <p id="les-villes"><a href="#" class="close-panel" ><i class="fa fa-globe" ></i>  Les parkings par villes</a></p>
+            <p id="MarquerMaVoiture"><a  href="#" class="fa fa-thumb-tack save-car-place close-panel" aria-hidden="true">  Marquer ma voiture</a></p>
+            <p id="TrouverMaVoiture"><a  href="#" class="fa fa-location-arrow get-car-place close-panel" aria-hidden="true">  Trouver ma voiture</a></p>
+            <!--<<p><a href="#" class="fa fa-battery-half etat-actuelle-parking close-panel" aria-hidden="true">  etats actulles des parkings</a></p>-->
+            <p><i class="fa fa-star" aria-hidden="true"></i>  Evaluer nous</p>
+            <!--<p><i class="fa fa-cogs" aria-hidden="true"></i>  Parametres</p>-->
+        </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class-->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <!-- Right link contains only icon - additional "icon-only" class-->
+                        <a href="#" class="link icon-only open-left-panel"> <i class="icon icon-bars"></i></a>
+                    </div>
+                    <!-- We have home navbar without left link-->
+                    <div class="center sliding">TunPark</div>
+                    <div class="right">
+                        <!-- Right link contains only icon - additional "icon-only" class-->
+                        <a href="#" class="link icon-only  open-right-panel"> <i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through no-toolbar">
+                <!-- Page, data-page contains page name-->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content-->
+
+                    <div class="page-content">
+                        <div id="listblokautocomplete" class="list-block">
+  <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-input">
+            <input id="myplace" type="text" placeholder="Je veux garer prés de ...">
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div> 
+<!--<div class="list-block">
+  <ul>
+    <li class="item-content">
+      <div class="item-title label">Language</div>
+      <div class="item-input">
+        <input type="text" placeholder="Language" id="autocomplete-dropdown-ajax"></div>
+    </li>
+  </ul>
+</div><button id="testing">click me</button>-->
+                    
+                            <div style="  width: 100%;height:93% ;margin: 0;padding: 0;left: 0;top: 0;" id="map_canvas">
+                                <span class="smallPanel" id="label"></span>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="popup">
+        <div class="content-block">
+
+            <div class="content-block-title">Formulaire de Contact</div>
+            <div class="list-block">
+
+                <ul>
+                    <!-- Text inputs -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input id="name" type="text" placeholder="Nom et prénom">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input id="email_add" type="email" placeholder="Votre E-mail">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <textarea id="message" placeholder="Votre message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+                <p><a id="send_email" href="#" class="button button-round active">Envoyer Votre message</a></p>
+            </div>
+            <p><a href="#" class="close-popup">Fermer</a></p>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOhkS6REe5e7CKZvDeuiC_AYaQmJgKvg&libraries=places" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="Welcome-Screen/welcomescreen.js"></script>
+    <script type="text/javascript">
+
+        var map;
+        var ParkingData = [];
+        var parking_tsawer_prix = [
+
+            {"id":"3","image":"02sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.00 Dr","capacité":"230 voitures","etoile":"3"},
+            {"id":"4","image":"03sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr","capacité":"30 voitures","etoile":"3"},
+            {"id":"5","image":"04sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"30 voitures","etoile":"3"},
+            {"id":"6","image":"05sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"25 voitures","etoile":"3"},
+            {"id":"7","image":"06sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"20 voitures","etoile":"3"},
+            {"id":"8","image":"DSCN1582.jpg","couvert":"1","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"13 voitures","etoile":"3"},
+            {"id":"9","image":"08sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"1 Dr la session","capacité":"400 voitures","etoile":"3"},
+            {"id":"10","image":"09sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"1 Dr la session","capacité":"65 voitures","etoile":"3"},
+            {"id":"12","image":"12sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"130 voitures","etoile":"3"},
+            {"id":"13","image":"13sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la session","capacité":"55 voitures","etoile":"3"},
+            {"id":"14","image":"notredameprod (3).jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la session","capacité":"140 voitures","etoile":"3"},
+            {"id":"15","image":"14111846_1423059497711221_1905598671_n.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"1 Dr la session","capacité":"420 voitures","etoile":"3"},
+            {"id":"16","image":"15033776_1499112793439224_1194619992_n.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dt la session","capacité":"72 voitures","etoile":"3"},
+            {"id":"17","image":"17sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"80 voitures","etoile":"3"},
+            {"id":"18","image":"18sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"110 voitures","etoile":"3"},
+            {"id":"19","image":"19sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"100 voitures","etoile":"3"},
+            {"id":"20","image":"20sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"50 voitures","etoile":"3"},
+            {"id":"21","image":"21sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"90 voitures","etoile":"3"},
+            {"id":"22","image":"22sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"45 voitures","etoile":"3"},
+            {"id":"23","image":"23sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"0.5 Dr la session","capacité":"25 voitures","etoile":"3"},
+            {"id":"24","image":"notredameprod (2).jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"80 voitures","etoile":"3"},
+            {"id":"25","image":"25sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"40 voitures","etoile":"3"},
+            {"id":"26","image":"26sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"26 voitures","etoile":"3"},
+            {"id":"27","image":"27sfax.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"120 voitures","etoile":"3"},
+            {"id":"28","image":"28sfax.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"gratuit","capacité":"200 voitures, 14 busses","etoile":"1"},
+            {"id":"29","image":"27sfax.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"gratuit","capacité":"200 voitures, 14 busses","etoile":"1"},
+            {"id":"30","image":"02sousse.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"gratuit","capacité":"80","etoile":"1"},
+            {"id":"31","image":"03sousse.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"gratuit","capacité":"260","etoile":"1"},
+            {"id":"32","image":"04sousse.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"gratuit","capacité":"120","etoile":"1"},
+            {"id":"33","image":"05sousse.jpg","couvert":"1","camera":"0","handicape":"0","gard":"1","prix":"1 dr la session/50 dr par mois","capacité":"25","etoile":"1"},
+            {"id":"34","image":"06sousse.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"de 0 a 3 hr: 1dr/de 3 a 6 hr: 2 dr/de 6  a 9 hr: 4dr","capacité":"350","etoile":"1"},
+            {"id":"35","image":"07sousse.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"Parking privé au abonnés seulement","capacité":"45","etoile":"1"},
+            {"id":"36","image":"08sousse.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"gratuit","capacité":"70","etoile":"2"},
+            {"id":"37","image":"09sousse.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"gratuit","capacité":"400","etoile":"1"},
+            {"id":"38","image":"10sousse.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"gratuit","capacité":"80","etoile":"1"},
+            {"id":"39","image":"02monastir.jpg","couvert":"0","camera":"1","handicape":"0","gard":"0","prix":"gratuit","capacité":"130","etoile":"1"},
+            {"id":"40","image":"03monastir.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"gratuits pour residents","capacité":"40","etoile":"1"},
+            {"id":"41","image":"04monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"45","etoile":"1"},
+            {"id":"42","image":"05monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"50","etoile":"1"},
+            {"id":"43","image":"06monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"35","etoile":"1"},
+            {"id":"44","image":"07monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"40","etoile":"1"},
+            {"id":"45","image":"08monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"0.5 Dr la session","capacité":"150","etoile":"1"},
+            {"id":"46","image":"notredameprod (1).jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"20","etoile":"1"},
+            {"id":"47","image":"10monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"200","etoile":"1"},
+            {"id":"48","image":"11monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"60","etoile":"1"},
+            {"id":"49","image":"12monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"40","etoile":"1"},
+            {"id":"50","image":"13monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"25","etoile":"1"},
+            {"id":"51","image":"14monastir.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"100","etoile":"1"},
+            {"id":"52","image":"14111835_1424070577610113_292564848_n.jpg","couvert":"0","camera":"1","handicape":"0","gard":"0","prix":"0-5min: Gratuit/5min-2 hr: 1 dr/2hr- 4hr: 2 dr","capacité":"560 voitures et 90 buses","etoile":"1"},
+            {"id":"53","image":"16monastir.jpg","couvert":"0","camera":"1","handicape":"0","gard":"0","prix":"0-5min: Gratuit/5min-2 hr: 1 dr/2hr- 4hr: 2 dr","capacité":"60","etoile":"1"},
+            {"id":"54","image":"14194468_1431397410210763_1567920297_n.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"1 Dr par heure","capacité":"640","etoile":"2"},
+            {"id":"55","image":"03tunis.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"1 Dr par heure","capacité":"223","etoile":"2"},
+            {"id":"56","image":"04tunis.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"240","etoile":"1"},
+            {"id":"57","image":"tunis05.jpg","couvert":"1","camera":"1","handicape":"1","gard":"1","prix":"0.6 Dr par heure","capacité":"640","etoile":"1"},
+            {"id":"58","image":"tunis06.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"35","etoile":"1"},
+            {"id":"59","image":"tunis07.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"750","etoile":"1"},
+            {"id":"60","image":"tunis06.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"0.5 Dr par heure","capacité":"940","etoile":"2"},
+            {"id":"61","image":"tunis09.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la session","capacité":"90","etoile":"1"},
+            {"id":"62","image":"tunis10.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"1200","etoile":"1"},
+            {"id":"63","image":"tunis11.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr la session","capacité":"60","etoile":"1"},
+            {"id":"64","image":"tunis12.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"1.5 Dr par heure","capacité":"250","etoile":"1"},
+            {"id":"65","image":"tunis13.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"2 Dr la seance","capacité":"120","etoile":"1"},
+            {"id":"66","image":"tunis14.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"2 Dr la seance","capacité":"200","etoile":"1"},
+            {"id":"67","image":"tunis15.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"100","etoile":"1"},
+            {"id":"68","image":"tunis16.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"2 Dr la seance","capacité":"60","etoile":"1"},
+            {"id":"69","image":"tunis17.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 4 hr","capacité":"20","etoile":"2"},
+            {"id":"70","image":"tunis18.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","adresse":"Rendpoint Avenue du Japon, Montplaisir","capacité":"50","etoile":"2"},
+            {"id":"71","image":"tunis19.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"40","etoile":"2"},
+            {"id":"72","image":"tunis20.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","adresse":"Avenue du Japon, Montplaisir","capacité":"35","etoile":"1"},
+            {"id":"73","image":"tunis21.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"120","etoile":"1"},
+            {"id":"74","image":"tunis22.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"2 Dr la seance","capacité":"25","etoile":"1"},
+            {"id":"75","image":"tunis23.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr par heure","capacité":"38","etoile":"1"},
+            {"id":"76","image":"02lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"85","etoile":"1"},
+            {"id":"77","image":"notredameprod.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"Fermé","capacité":"495","etoile":"1"},
+            {"id":"78","image":"04lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr la session","capacité":"695","etoile":"1"},
+            {"id":"79","image":"05lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"80","etoile":"1"},
+            {"id":"80","image":"06lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"85","etoile":"1"},
+            {"id":"81","image":"07lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"85","etoile":"1"},
+            {"id":"82","image":"07lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session","capacité":"40","etoile":"1"},
+            {"id":"83","image":"09lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","adresse":"Rue Lac Loch Ness,les berges du Lac, 1053","capacité":"180","etoile":"1"},
+            {"id":"84","image":"IMG_00010640.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr la session","capacité":"110","etoile":"2"},
+            {"id":"85","image":"11lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la session","adresse":"Rue Principale ,les berges du Lac, 1053","capacité":"210","etoile":"1"},
+            {"id":"86","image":"12lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la session","adresse":"Rue Principale ,les berges du Lac, 1053","capacité":"90","etoile":"1"},
+            {"id":"87","image":"13lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","adresse":"Rue Lac Victoria,les berges du Lac, 1053","capacité":"320","etoile":"1"},
+            {"id":"88","image":"14lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","adresse":"Lac Leman 1,les berges du Lac, 1053","capacité":"0","etoile":"1"},
+            {"id":"90","image":"16lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session","adresse":"Lac Leman 3,les berges du Lac, 1053","capacité":"0","etoile":"1"},
+            {"id":"91","image":"17lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","adresse":"Lac Leman 4,les berges du Lac, 1053","capacité":"0","etoile":"1"},
+            {"id":"92","image":"15lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"120","etoile":"1"},
+            {"id":"93","image":"19lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"120","etoile":"1"},
+            {"id":"94","image":"20lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session de 7 hr","capacité":"150","etoile":"1"},
+            {"id":"95","image":"21lac.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr session","capacité":"178","etoile":"1"},
+            {"id":"96","image":"02ariana.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","adresse":"Avenue Othman Ibn Affane","capacité":"0","etoile":"1"},
+            {"id":"97","image":"03ariana.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"35","etoile":"1"},
+            {"id":"98","image":"04ariana.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"gratuit","capacité":"450","etoile":"1"},
+            {"id":"99","image":"06ariana.jpg","couvert":"1","camera":"1","handicape":"1","gard":"1","prix":"gratuit","capacité":"150","etoile":"3"},
+            {"id":"100","image":"05ariana.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"45","etoile":"1"},
+            {"id":"101","image":"07ariana.jpg","couvert":"1","camera":"1","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"160","etoile":"1"},
+            {"id":"102","image":"02bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"160","etoile":"1"},
+            {"id":"103","image":"03bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"1050","etoile":"1"},
+            {"id":"104","image":"04bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"1200","etoile":"1"},
+            {"id":"105","image":"05Bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"170","etoile":"1"},
+            {"id":"106","image":"06bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1.5 Dr la seance","capacité":"340","etoile":"1"},
+            {"id":"107","image":"07bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"250","etoile":"1"},
+            {"id":"108","image":"08Bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"35","etoile":"1"},
+            {"id":"109","image":"09Bonlieu.jpg","couvert":"1","camera":"1","handicape":"1","gard":"1","prix":"1 Dr la seance","capacité":"75","etoile":"1"},
+            {"id":"110","image":"10Bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 Dr la seance","capacité":"110","etoile":"1"},
+            {"id":"111","image":"11bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"55","etoile":"1"},
+            {"id":"112","image":"12bonlieu.jpg","couvert":"0","camera":"0","handicape":"0","gard":"0","prix":"gratuit","capacité":"105","etoile":"1"},
+            {"id":"113","image":"13bonlieu.jpg","couvert":"0","camera":"1","handicape":"0","gard":"1","prix":"gratuit","capacité":"2000","etoile":"1"},
+            {"id":"117","image":"IMG_20170530_101514.jpg","couvert":"0","camera":"1","handicape":"0","gard":"0","prix":"2 DT la session","capacité":"140","etoile":"1"},
+            {"id":"116","image":"IMG_20170530_101202.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"2 DT la session","capacité":"120","etoile":"1"},
+            {"id":"118","image":"IMG_20170530_104454.jpg","couvert":"0","camera":"0","handicape":"0","gard":"1","prix":"1 DT la session","capacité":"75","etoile":"1"},
+
+        ];
+        ;
+        document.addEventListener("deviceready", function() {
+            initializeMap();
+
+                map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady1);
+
+        }, false);
+
+
+    </script>
+
+</body>
+
+</html>
+
+
+

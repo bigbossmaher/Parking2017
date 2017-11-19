@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>TunPark</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/framework7.ios.min.css">
+        <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="Welcome-Screen/welcomescreen.css">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+    </head>
+    <body style="font-family:Arial;font-size:18pt;border:0;margin:0;padding:0;" class="theme-lightblue" onload="">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-right panel-cover">
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-left panel-cover">
+    </div>
+    <!-- Views-->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class-->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script src="Welcome-Screen/welcomescreen.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("deviceready", function() {
+
+
+            initializeMap();
+            var stor = myApp.formGetData('launchWelcomex');
+            if (stor){
+                location = "index.html";
+
+            }
+            else{
+
+                executeWelcomeScreen();
+            }
+
+
+        }, false);
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+

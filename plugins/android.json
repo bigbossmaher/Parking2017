@@ -1,0 +1,59 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.lampa.startapp": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-geofence": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyDaOhkS6REe5e7CKZvDeuiC_AYaQmJgKvg",
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-insomnia": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.parking.tunisie"
+    }
+  }
+}

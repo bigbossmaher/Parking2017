@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/OutSystems/cordova-plugin-geofence.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/OutSystems/cordova-plugin-geofence.git",
+        "spec": "git+https://github.com/OutSystems/cordova-plugin-geofence.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:OutSystems/cordova-plugin-geofence.git",
+          "sshUrl": "git+ssh://git@github.com/OutSystems/cordova-plugin-geofence.git",
+          "httpsUrl": "git+https://github.com/OutSystems/cordova-plugin-geofence.git",
+          "gitUrl": "git://github.com/OutSystems/cordova-plugin-geofence.git",
+          "shortcut": "github:OutSystems/cordova-plugin-geofence",
+          "directUrl": "https://raw.githubusercontent.com/OutSystems/cordova-plugin-geofence/master/package.json"
+        }
+      },
+      "c:\\Parking"
+    ]
+  ],
+  "_from": "git+https://github.com/OutSystems/cordova-plugin-geofence.git",
+  "_id": "cordova-plugin-geofence@0.6.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-geofence",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/OutSystems/cordova-plugin-geofence.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/OutSystems/cordova-plugin-geofence.git",
+    "spec": "git+https://github.com/OutSystems/cordova-plugin-geofence.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:OutSystems/cordova-plugin-geofence.git",
+      "sshUrl": "git+ssh://git@github.com/OutSystems/cordova-plugin-geofence.git",
+      "httpsUrl": "git+https://github.com/OutSystems/cordova-plugin-geofence.git",
+      "gitUrl": "git://github.com/OutSystems/cordova-plugin-geofence.git",
+      "shortcut": "github:OutSystems/cordova-plugin-geofence",
+      "directUrl": "https://raw.githubusercontent.com/OutSystems/cordova-plugin-geofence/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/OutSystems/cordova-plugin-geofence.git#f9b0111de819d257aa049db8796b37b55f49e1db",
+  "_shasum": "98551a427d8ff22411350cf4a606248daa6aef70",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/OutSystems/cordova-plugin-geofence.git",
+  "_where": "c:\\Parking",
+  "author": {
+    "name": "Cowbell Labs"
+  },
+  "bugs": {
+    "url": "https://github.com/cowbell/cordova-plugin-geofence/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-geofence",
+    "platforms": [
+      "android",
+      "ios",
+      "wp8",
+      "windows8",
+      "windows"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova geofence plugin",
+  "devDependencies": {
+    "cordova": "^6.1.1",
+    "cordova-paramedic": "git+https://github.com/apache/cordova-paramedic.git"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "gitHead": "f9b0111de819d257aa049db8796b37b55f49e1db",
+  "homepage": "https://github.com/cowbell/cordova-plugin-geofence#readme",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "geofence",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-wp8",
+    "cordova-windows8",
+    "cordova-windows"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-geofence",
+  "optionalDependencies": {},
+  "readme": "# Cordova Geofence Plugin\r\n\r\n###This Plugin is an extension from: [cordova-plugin-geofence](https://github.com/cowbell/cordova-plugin-geofence)\r\n\r\n---\r\n\r\nPlugin forked from Cowbell Repository to extend functionalities. The main goal here was add more features like as:\r\n\r\n* Works with the Application closed;\r\n* On Notification Clicked the app can be opened by a DeepLink, Deeplink is sent in the Geofence Register on the data parameter;\r\n* Upgrade Google Play Service for version 8.4;\r\n* When the application is opened from notification the notification data can be delivered as a deeplink or in the WebView;\r\n* Only Create Notifications when the app is in background or closed;\r\n\r\n---\r\n\r\nPlugin to monitor circular geofences using mobile devices. The purpose is to notify user if crossing the boundary of the monitored geofence.\r\n\r\n*Geofences persist after device reboot. You do not have to open your app first to monitor added geofences*\r\n\r\n\r\n## Installation\r\n\r\nFrom master\r\n```\r\ncordova plugin add https://github.com/OutSystems/cordova-plugin-geofence.git\r\n```\r\n\r\n## Removing the Plugin from project\r\n\r\nUsing cordova CLI\r\n\r\n```\r\ncordova plugin rm cordova-plugin-geofence\r\n```\r\n\r\n## Supported Platforms\r\n\r\n- Android\r\n- iOS >=7.0\r\n- Windows Phone 8.1\r\n    - using Universal App (cordova windows platform)\r\n    - using Silverlight App (cordova wp8 platform retargeted to WP 8.1)\r\n\r\n# Using the plugin\r\n\r\nCordova initialize plugin to `window.geofence` object.\r\n\r\n## Methods\r\n\r\n- `window.geofence.initialize(onSuccess, onError)`\r\n- `window.geofence.addOrUpdate(geofences, onSuccess, onError)`\r\n- `window.geofence.remove(geofenceId, onSuccess, onError)`\r\n- `window.geofence.removeAll(onSuccess, onError)`\r\n- `window.geofence.getWatched(onSuccess, onError)`\r\n\r\nAll methods returning promises, but you can also use standard callback functions.\r\n\r\nFor listening of geofence transistion you can override onTransitionReceived method\r\n- `window.geofence.onTransitionReceived(geofences)`\r\n\r\n## Constants\r\n\r\n- `TransitionType.ENTER` = 1\r\n- `TransitionType.EXIT` = 2\r\n- `TransitionType.BOTH` = 3\r\n\r\n## Plugin initialization\r\n\r\nThe plugin is not available until `deviceready` event is fired.\r\n\r\n```javascript\r\ndocument.addEventListener('deviceready', function () {\r\n    // window.geofence is now available\r\n    window.geofence.initialize();\r\n}, false);\r\n```\r\n\r\n## Adding new geofence to monitor\r\n\r\n```javascript\r\nwindow.geofence.addOrUpdate({\r\n    id:             String, //A unique identifier of geofence\r\n    latitude:       Number, //Geo latitude of geofence\r\n    longitude:      Number, //Geo longitude of geofence\r\n    radius:         Number, //Radius of geofence in meters\r\n    transitionType: Number, //Type of transition 1 - Enter, 2 - Exit, 3 - Both\r\n    notification: {         //Notification object\r\n        id:             Number, //optional should be integer, id of notification\r\n        title:          String, //Title of notification\r\n        text:           String, //Text of notification\r\n        smallIcon:      String, //Small icon showed in notification area, only res URI\r\n        icon:           String, //icon showed in notification drawer\r\n        openAppOnClick: Boolean,//is main app activity should be opened after clicking on notification\r\n        vibration:      [Integer], //Optional vibration pattern - see description\r\n        data:           Object,  //Custom object associated with notification\r\n        dateStart:      Date, // Initial Date to start dispatch events of a Geofence - Optiona parameter\r\n        dateEnd:        Date, // End Date to stop dispatch events of a Geofence - Optiona parameter\r\n        happensOnce:    Boolean,  // only show a notification once - Default value false\r\n    }\r\n}).then(function () {\r\n    console.log('Geofence successfully added');\r\n}, function (reason) {\r\n    console.log('Adding geofence failed', reason);\r\n});\r\n```\r\nAdding more geofences at once\r\n```javascript\r\nwindow.geofence.addOrUpdate([geofence1, geofence2, geofence3]);\r\n```\r\n\r\nGeofence overrides the previously one with the same `id`.\r\n\r\n*All geofences are stored on the device and restored to monitor after device reboot.*\r\n\r\nNotification overrides the previously one with the same `notification.id`.\r\n\r\n## Notification vibrations\r\n\r\nYou can set vibration pattern for the notification or disable default vibrations.\r\n\r\nTo change vibration pattern set `vibrate` property of `notification` object in geofence.\r\n\r\n###Examples\r\n\r\n```\r\n//disable vibrations\r\nnotification: {\r\n    vibrate: [0]\r\n}\r\n```\r\n\r\n```\r\n//Vibrate for 1 sec\r\n//Wait for 0.5 sec\r\n//Vibrate for 2 sec\r\nnotification: {\r\n    vibrate: [1000, 500, 2000]\r\n}\r\n```\r\n\r\n###Platform quirks\r\n\r\nFully working only on Android.\r\n\r\nOn iOS vibration pattern doesn't work. Plugin only allow to vibrate with default system pattern.\r\n\r\nWindows Phone - current status is TODO\r\n\r\n## Notification icons\r\n\r\nTo set notification icons use `icon` and `smallIcon` property in `notification` object.\r\n\r\nAs a value you can enter:\r\n- name of native resource or your application resource e.g. `res://ic_menu_mylocation`, `res://icon`, `res://ic_menu_call`\r\n- relative path to file in `www` directory e.g. `file://img/ionic.png`\r\n\r\n`smallIcon` - supports only resources URI\r\n\r\n###Examples\r\n\r\n```\r\nnotification: {\r\n    smallIcon: 'res://my_location_icon',\r\n    icon: 'file://img/geofence.png'\r\n}\r\n```\r\n\r\n###Platform quirks\r\n\r\nWorks only on Android platform so far.\r\n\r\n## Removing\r\n\r\nRemoving single geofence\r\n```javascript\r\nwindow.geofence.remove(geofenceId)\r\n    .then(function () {\r\n        console.log('Geofence sucessfully removed');\r\n    }\r\n    , function (reason){\r\n        console.log('Removing geofence failed', reason);\r\n    });\r\n```\r\nRemoving more than one geofence at once.\r\n```javascript\r\nwindow.geofence.remove([geofenceId1, geofenceId2, geofenceId3]);\r\n```\r\n\r\n## Removing all geofences\r\n\r\n```javascript\r\nwindow.geofence.removeAll()\r\n    .then(function () {\r\n        console.log('All geofences successfully removed.');\r\n    }\r\n    , function (reason) {\r\n        console.log('Removing geofences failed', reason);\r\n    });\r\n```\r\n\r\n## Getting watched geofences from device\r\n\r\n```javascript\r\nwindow.geofence.getWatched().then(function (geofencesJson) {\r\n    var geofences = JSON.parse(geofencesJson);\r\n});\r\n```\r\n\r\n## Listening for geofence transitions\r\n\r\n```javascript\r\nwindow.geofence.onTransitionReceived = function (geofences) {\r\n    geofences.forEach(function (geofences) {\r\n        console.log('Geofence transition detected', geo);\r\n    });\r\n};\r\n```\r\n\r\n## When the app is opened via Notification click\r\n\r\nAndroid, iOS only\r\n\r\n`window.geofence.onTransitionReceived` callback will be called and, for each geofence the property `openedFromNotification` will be true.\r\n\r\n#Example usage\r\n\r\nAdding geofence to monitor entering Gliwice city center area of radius 3km\r\n\r\n```javascript\r\nwindow.geofence.addOrUpdate({\r\n    id:             \"69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb\",\r\n    latitude:       50.2980049,\r\n    longitude:      18.6593152,\r\n    radius:         3000,\r\n    transitionType: TransitionType.ENTER,\r\n    notification: {\r\n        id:             1,\r\n        title:          \"Welcome in Gliwice\",\r\n        text:           \"You just arrived to Gliwice city center.\",\r\n        openAppOnClick: true\r\n    }\r\n}).then(function () {\r\n    console.log('Geofence successfully added');\r\n}, function (reason) {\r\n    console.log('Adding geofence failed', reason);\r\n})\r\n```\r\n\r\n# Platform specifics\r\n\r\n##Android\r\n\r\nThis plugin uses Google Play Services so you need to have it installed on your device.\r\nThis plugin uses GSON to do parse of the JSON, if you use the same library in your project you can have conflicts.\r\n\r\n##iOS\r\n\r\nPlugin is written in Swift. All xcode project options to enable swift support are set up automatically after plugin is installed.\r\nPlugin has a category to AppDelegate that assumes the name \"AppDelagate\" if you have a diferent name in your project you need replace the name in this category.\r\n\r\n##Windows phone 8.1\r\n\r\nPlugin can be used with both windows phone 8.1 type projects Univeral App, Silverlight App.\r\n\r\nIn order to use toast notifications you have to enable this feature in appxmanifest file either using UI in Visual Studio or edit file setting attribute **ToastCapable=\"true\"** in **m3:VisualElements** node under Package/Applications/Application.\r\n\r\nIf you are retargeting WP 8.0 to WP 8.1 you need to register background task to perform geofence notifications. Register it via UI in Visual Studio or add following code under Package/Applications/Application/Extensions\r\n\r\n```xml\r\n<Extension Category=\"windows.backgroundTasks\" EntryPoint=\"GeofenceComponent.GeofenceTrigger\">\r\n    <BackgroundTasks>\r\n        <m2:Task Type=\"location\" />\r\n    </BackgroundTasks>\r\n</Extension>\r\n```\r\n\r\n# Development\r\n\r\n##Installation\r\n\r\n- git clone https://github.com/OutSystems/cordova-plugin-geofence\r\n- change into the new directory\r\n- `npm install`\r\n\r\n---\r\n\r\n## Contributors\r\n- OutSystems - Mobility Experts\r\n    - João Gonçalves, <joao.goncalves@outsystems.com>\r\n    - Rúben Gonçalves, <ruben.goncalves@outsystems.com>\r\n    - Vitor Oliveira, <vitor.oliveira@outsystems.com>\r\n\r\n#### Document author\r\n- Vitor Oliveira, <vitor.oliveira@outsystems.com>\r\n\r\n###Copyright OutSystems, 2016\r\n\r\nOriginal Creator: [Cowbell-labs.]( https://github.com/cowbell)\r\n\r\n---\r\n\r\n##License\r\n\r\nThis software is released under the [Apache 2.0 License](http://opensource.org/licenses/Apache-2.0).\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cowbell/cordova-plugin-geofence.git"
+  },
+  "scripts": {
+    "test": "cordova-paramedic --platform android --plugin ."
+  },
+  "typings": "./typings/cordova-plugin-geofence.d.ts",
+  "version": "0.6.0"
+}

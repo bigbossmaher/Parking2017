@@ -1,0 +1,196 @@
+@-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          
+@viewport { width: 100vw ; min-zoom: 100%; zoom: 100% ; }
+@-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   
+@viewport { user-zoom: fixed ; min-zoom: 100% ; }
+            
+* {
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -ms-touch-action: none;
+}
+/*pout autocomplete fonctione bien*/
+.pac-container {
+  z-index:20000;
+}
+
+#myplace{
+    width: 50%;
+    margin-left: 25%;
+
+}
+#listblokautocomplete{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#map_canvas{
+    position: relative;
+    //width: 100vh;
+}
+
+#image_de_parking{
+    //width: 120px;
+    padding-top: 3%;
+    margin-right: 3%;
+    margin-right: 2px;
+    max-width:100%;
+}
+#icon_de_parking{
+    padding-right:10px ;
+}
+.etoiles{
+    padding-top: 3%;
+    width: 70px;
+    height: 20px;
+}
+
+.icon_de_parking{
+    padding-left: 2px;
+}
+
+#cach_icon{
+    width: 20px;
+    height: 20px;
+}
+#nom_du_parking{
+
+    margin-bottom: 0px;
+
+}
+
+@media only screen and (max-width: 320px) {
+    .picker-modal-inner .content-block{
+        font-size: 12px;
+    }
+
+
+
+
+
+}
+@media only screen and (max-width: 384px) and (min-width: 321px){
+    .picker-modal-inner .content-block{
+        font-size: 15px;
+    }
+    #image_de_parking{
+        padding-top: 15px;
+        //width: 100px;
+        //height: 100px;
+        margin-right: 2px;
+        max-width:100%;
+    }
+    .etoiles{
+        padding-top: 15px;
+        width: 70px;
+        height: 20px;
+    }
+    .icon_de_parking{
+        padding-left: 2px;
+    }
+
+    #cach_icon{
+        width: 20px;
+        height: 20px;
+    }
+        #nom_du_parking{
+
+    margin-bottom: 0px;
+
+    }
+}
+@media only screen and (max-width: 432px) and (min-width: 385px){
+    .picker-modal-inner .content-block{
+        font-size: 15px;
+    }
+    #image_de_parking{
+        padding-top: 15px;
+        //width: 100px;
+        //height: 100px;
+        margin-right: 2px;
+        max-width:100%;
+    }
+    .etoiles{
+        padding-top: 15px;
+        width: 70px;
+        height: 20px;
+    }
+    .icon_de_parking{
+        padding-left: 2px;
+    }
+
+    #cach_icon{
+        width: 20px;
+        height: 20px;
+    }
+        #nom_du_parking{
+
+    margin-bottom: 0px;
+
+    }
+}
+@media only screen and (max-width: 602px) and (min-width: 433px){
+    .picker-modal-inner .content-block{
+        font-size: 17px;
+    }
+    #image_de_parking{
+        padding-top: 15px;
+        width: 120px;
+        height: 120px;
+        margin-right: 2px;
+        max-width:100%;
+    }
+    .etoiles{
+        padding-top: 15px;
+        width: 70px;
+        height: 20px;
+    }
+    .icon_de_parking{
+        padding-left: 2px;
+    }
+
+    #cach_icon{
+        width: 20px;
+        height: 20px;
+    }
+        #nom_du_parking{
+
+    margin-bottom: 0px;
+
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 603px)  {
+    .picker-modal-inner .content-block{
+        font-size: 15px;
+    }
+    #image_de_parking{
+        padding-top: 15px;
+        //width: 115px;
+        //height: 115px;
+        margin-right: 2px;
+        max-width:100%;
+    }
+    .etoiles{
+        padding-top: 15px;
+        width: 70px;
+        height: 20px;
+    }
+    .icon_de_parking{
+        padding-left: 2px;
+    }
+
+    #cach_icon{
+        width: 20px;
+        height: 20px;
+    }
+    #nom_du_parking,#Adresse_parking{
+        font-size: 17px;
+    }
+    #nom_du_parking{
+
+    margin-bottom: 0px;
+
+    }
+}
+
+
+

@@ -1,0 +1,87 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "es6-promise-plugin",
+        "scope": null,
+        "escapedName": "es6-promise-plugin",
+        "name": "es6-promise-plugin",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "c:\\Parking"
+    ]
+  ],
+  "_from": "es6-promise-plugin@latest",
+  "_id": "es6-promise-plugin@4.1.1",
+  "_inCache": true,
+  "_location": "/es6-promise-plugin",
+  "_nodeVersion": "8.2.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/es6-promise-plugin-4.1.1.tgz_1505238711397_0.4932746938429773"
+  },
+  "_npmUser": {
+    "name": "vstirbu",
+    "email": "vstirbu@gmail.com"
+  },
+  "_npmVersion": "5.3.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "es6-promise-plugin",
+    "scope": null,
+    "escapedName": "es6-promise-plugin",
+    "name": "es6-promise-plugin",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/es6-promise-plugin/-/es6-promise-plugin-4.1.1.tgz",
+  "_shasum": "3de7258fc423e0863fe21cfbc3ccabc1c6fade50",
+  "_shrinkwrap": null,
+  "_spec": "es6-promise-plugin",
+  "_where": "c:\\Parking",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/vstirbu/PromisesPlugin/issues"
+  },
+  "dependencies": {},
+  "description": "ES6-Promises polyfill for Cordova/PhoneGap",
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "es6-promise": "^4.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-xuE0Cd7JUQSITlpV8F61kgqaBRqtFoV60H06UlhzyUcx6iS4/+xAKY+WEDCn13tOKHMwJfw9QVKAJZDAu8EMhg==",
+    "shasum": "3de7258fc423e0863fe21cfbc3ccabc1c6fade50",
+    "tarball": "https://registry.npmjs.org/es6-promise-plugin/-/es6-promise-plugin-4.1.1.tgz"
+  },
+  "ecosystem": "cordova",
+  "gitHead": "6ec3f7812945176569a62b304821a4aafc3b0949",
+  "homepage": "https://github.com/vstirbu/PromisesPlugin#readme",
+  "license": "MIT",
+  "main": "www/promise.js",
+  "maintainers": [
+    {
+      "name": "vstirbu",
+      "email": "vlad.stirbu@ieee.org"
+    }
+  ],
+  "name": "es6-promise-plugin",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vstirbu/PromisesPlugin.git"
+  },
+  "scripts": {
+    "build": "./build"
+  },
+  "version": "4.1.1"
+}
